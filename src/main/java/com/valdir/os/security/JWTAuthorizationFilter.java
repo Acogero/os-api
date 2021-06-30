@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.security;
 
 import java.io.IOException;
@@ -22,9 +23,11 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
 	private JWTUtil jwtUtil;
 
-	/*
+	*/
+/*
 	 * Need from UserDetailsService to find a user by CPF
-	 */
+	 *//*
+
 	private UserDetailsService userDetailsService;
 
 	public JWTAuthorizationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil,
@@ -39,14 +42,18 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 			throws IOException, ServletException {
 		LOG.info("JWTAuthorizationFilter - ENTROU NO FILTRO INTERNO");
 		
-		/*
+		*/
+/*
 		 * First I need take Authorization value that has on header from request
-		 */
+		 *//*
+
 		String header = request.getHeader("Authorization");
 
-		/*
+		*/
+/*
 		 * Method to free access to user that was trying access the endpoint
-		 */
+		 *//*
+
 		if (header != null && header.startsWith("Bearer ")) {
 			UsernamePasswordAuthenticationToken auth = getAuthentication(header.substring(7));
 			if (auth != null) {
@@ -69,3 +76,4 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	}
 
 }
+*/

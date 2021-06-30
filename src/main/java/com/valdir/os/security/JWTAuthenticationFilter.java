@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.security;
 
 import java.io.IOException;
@@ -34,17 +35,21 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         this.jwtUtil = jwtUtil;
     }
     
-	/*
+	*/
+/*
 	 * Method to attempt authentication
-	 */
+	 *//*
+
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
 		LOG.info("JWTAuthenticationFilter - REQUISIÇÃO CHEGOU NO FILTRO DE AUTENTICAÇÃO");
 		
-		/*
+		*/
+/*
 		 * try authentication and case we have an error will send a new exception
-		 */
+		 *//*
+
 		try {
 			LOG.info("JWTAuthenticationFilter - TRANSFORMANDO DADOS DA REQUISIÇÃO EM CredenciaisDTO");
 			CredenciaisDTO creds = new ObjectMapper().readValue(request.getInputStream(), CredenciaisDTO.class);
@@ -64,10 +69,12 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		}
 	} 
 
-	/*
+	*/
+/*
 	 * Case successful authentication the object auth will be sended to method
 	 * seccessfulAuthentication where we will take cpf and generate a token
-	 */
+	 *//*
+
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
@@ -92,3 +99,4 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.getWriter().flush();
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.services;
 
 import org.slf4j.Logger;
@@ -35,3 +36,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return user;
 	}
 }
+*/

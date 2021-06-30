@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.security;
 
 import java.util.Collection;
@@ -71,3 +72,4 @@ public class UserSS implements UserDetails {
 	}
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.security;
 
 import java.util.Date;
@@ -22,15 +23,19 @@ public class JWTUtil {
 	@Value("${jwt.expiration}")
 	private Long expiration;
 
-	/*
+	*/
+/*
 	 * Method to generate a token
-	 */
+	 *//*
+
 	public String generateToken(String cpf) {
 		LOG.info("JWTUtil - GERANDO TOKEN");
 
-		/*
+		*/
+/*
 		 * We will use the jwt now
-		 */
+		 *//*
+
 		return Jwts.builder()
 				// Username
 				.setSubject(cpf)
@@ -57,9 +62,11 @@ public class JWTUtil {
 		return false;
 	}
 
-	/*
+	*/
+/*
 	 * This methoid will get the claims from token
-	 */
+	 *//*
+
 	private Claims getClaimsToken(String token) {
 		LOG.info("JWTUtil - OBTENDO CLAIMS DO TOKEN");
 		try {
@@ -78,3 +85,4 @@ public class JWTUtil {
 		return null;
 	}
 }
+*/

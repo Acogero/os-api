@@ -1,23 +1,20 @@
 package com.valdir.os.services;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.validation.Valid;
-
+import com.valdir.os.domain.Cliente;
+import com.valdir.os.domain.Pessoa;
+import com.valdir.os.dtos.ClienteDTO;
+import com.valdir.os.repositories.ClienteRepository;
+import com.valdir.os.repositories.PessoaRepository;
+import com.valdir.os.services.exceptions.DataIntegratyViolationException;
+import com.valdir.os.services.exceptions.ObjectNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.valdir.os.domain.Pessoa;
-import com.valdir.os.domain.Cliente;
-import com.valdir.os.dtos.ClienteDTO;
-import com.valdir.os.repositories.PessoaRepository;
-import com.valdir.os.repositories.ClienteRepository;
-import com.valdir.os.services.exceptions.DataIntegratyViolationException;
-import com.valdir.os.services.exceptions.ObjectNotFoundException;
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteService {
@@ -30,8 +27,8 @@ public class ClienteService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 
-	@Autowired
-	private BCryptPasswordEncoder encoder;
+/*	@Autowired
+	private BCryptPasswordEncoder encoder;*/
 
 	/*
 	 * Busca Cliente pelo ID
@@ -60,8 +57,7 @@ public class ClienteService {
 			throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
 		}
 
-		return repository.save(new Cliente(null, objDTO.getNome(), objDTO.getCpf(), objDTO.getTelefone(),
-				encoder.encode(objDTO.getSenha())));
+		return repository.save(new Cliente(null, objDTO.getNome(), objDTO.getCpf(), objDTO.getTelefone()));//, encoder.encode(objDTO.getSenha())));
 	}
 
 	/*

@@ -18,8 +18,8 @@ public class Cliente extends Pessoa implements Serializable {
 		super();
 	}
 
-	public Cliente(Integer id, String nome, String cpf, String telefone, String senha) {
-		super(id, nome, cpf, telefone, senha);
+	public Cliente(Integer id, String nome, String cpf, String telefone/*, String senha*/) {
+		super(id, nome, cpf, telefone/*, senha*/);
 	}
 
 	public List<OS> getList() {

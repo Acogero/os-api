@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.resources;
 
 import javax.servlet.http.HttpServletResponse;
@@ -35,3 +36,4 @@ public class AuthResource {
 	}
 
 }
+*/

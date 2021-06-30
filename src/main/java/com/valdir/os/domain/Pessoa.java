@@ -31,25 +31,25 @@ public abstract class Pessoa implements Serializable {
 	private String cpf;
 	private String telefone;
 
-	@JsonIgnore
+/*	@JsonIgnore
 	private String senha;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "PERFIS")
-	private Set<Integer> perfis = new HashSet<>();
+	private Set<Integer> perfis = new HashSet<>();*/
 
 	public Pessoa() {
 		super();
 		addPerfil(Perfil.CLIENTE);
 	}
 
-	public Pessoa(Integer id, String nome, String cpf, String telefone, String senha) {
+	public Pessoa(Integer id, String nome, String cpf, String telefone/*, String senha*/) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
-		this.senha = senha;
+//		this.senha = senha;
 		addPerfil(Perfil.CLIENTE);
 	}
 
@@ -85,7 +85,7 @@ public abstract class Pessoa implements Serializable {
 		this.telefone = telefone;
 	}
 
-	public String getSenha() {
+	/*public String getSenha() {
 		return senha;
 	}
 
@@ -95,10 +95,10 @@ public abstract class Pessoa implements Serializable {
 
 	public Set<Perfil> getPerfis() {
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
-	}
+	}*/
 
 	public void addPerfil(Perfil perfil) {
-		perfis.add(perfil.getCod());
+//		perfis.add(perfil.getCod());
 	}
 
 	@Override

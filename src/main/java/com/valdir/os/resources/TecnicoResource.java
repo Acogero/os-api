@@ -1,29 +1,19 @@
 package com.valdir.os.resources;
 
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
-
+import com.valdir.os.domain.Tecnico;
+import com.valdir.os.dtos.TecnicoDTO;
+import com.valdir.os.services.TecnicoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.valdir.os.domain.Tecnico;
-import com.valdir.os.dtos.TecnicoDTO;
-import com.valdir.os.services.TecnicoService;
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/tecnicos")
@@ -48,7 +38,7 @@ public class TecnicoResource {
 	/*
 	 * Lista todos objetos do tipo Tecnico na base
 	 */
-	@PreAuthorize("hasAnyRole('ADMIN')")
+//	@PreAuthorize("hasAnyRole('ADMIN')")
 	@GetMapping
 	public ResponseEntity<List<TecnicoDTO>> findAll() {
 		log.info("RESOURCE - BUSCANDO TODOS OD TÉCNICOS");
@@ -62,7 +52,7 @@ public class TecnicoResource {
 	/*
 	 * Cria um novo Tecnico
 	 */
-	@PreAuthorize("hasAnyRole('ADMIN')")
+//	@PreAuthorize("hasAnyRole('ADMIN')")
 	@PostMapping
 	public ResponseEntity<TecnicoDTO> create(@Valid @RequestBody TecnicoDTO objDTO) {
 		log.info("RESOURCE - CRIANDO NOVO TÉCNICO");
@@ -77,7 +67,7 @@ public class TecnicoResource {
 	/*
 	 * Atualiza um Tecnico
 	 */
-	@PreAuthorize("hasAnyRole('ADMIN')")
+//	@PreAuthorize("hasAnyRole('ADMIN')")
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<TecnicoDTO> update(@PathVariable Integer id, @Valid @RequestBody TecnicoDTO objDTO) {
 		log.info("RESOURCE - ATUALIZANDO TÉCNICO");
@@ -89,7 +79,7 @@ public class TecnicoResource {
 	/*
 	 * Delete Tecnico
 	 */
-	@PreAuthorize("hasAnyRole('ADMIN')")
+//	@PreAuthorize("hasAnyRole('ADMIN')")
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		log.info("RESOURCE - DELETANDO TÉCNICO");

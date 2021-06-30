@@ -44,8 +44,8 @@ public class ClienteDTO implements Serializable {
 		this.nome = obj.getNome();
 		this.cpf = obj.getCpf();
 		this.telefone = obj.getTelefone();
-		this.senha = obj.getSenha();
-		this.perfis = obj.getPerfis().stream().map(x -> x.getCod()).collect(Collectors.toSet());
+		/*this.senha = obj.getSenha();
+		this.perfis = obj.getPerfis().stream().map(x -> x.getCod()).collect(Collectors.toSet());*/
 	}
 
 	public Integer getId() {

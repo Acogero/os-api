@@ -1,16 +1,5 @@
 package com.valdir.os.services;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.validation.Valid;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
-
 import com.valdir.os.domain.Pessoa;
 import com.valdir.os.domain.Tecnico;
 import com.valdir.os.domain.enuns.Perfil;
@@ -19,6 +8,14 @@ import com.valdir.os.repositories.PessoaRepository;
 import com.valdir.os.repositories.TecnicoRepository;
 import com.valdir.os.services.exceptions.DataIntegratyViolationException;
 import com.valdir.os.services.exceptions.ObjectNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TecnicoService {
@@ -31,8 +28,8 @@ public class TecnicoService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 
-	@Autowired
-	private BCryptPasswordEncoder encoder;
+/*	@Autowired
+	private BCryptPasswordEncoder encoder;*/
 
 	/*
 	 * Busca Tecnico pelo ID
@@ -61,8 +58,7 @@ public class TecnicoService {
 			throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
 		}
 
-		Tecnico newTec = new Tecnico(null, objDTO.getNome(), objDTO.getCpf(), objDTO.getTelefone(),
-				encoder.encode(objDTO.getSenha()));
+		Tecnico newTec = new Tecnico(null, objDTO.getNome(), objDTO.getCpf(), objDTO.getTelefone());//, encoder.encode(objDTO.getSenha()));
 
 		if (objDTO.getPerfis().contains(Perfil.ADMIN)) {
 			newTec.addPerfil(Perfil.ADMIN);

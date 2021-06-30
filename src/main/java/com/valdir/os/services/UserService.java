@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.services;
 
 import org.slf4j.Logger;
@@ -20,3 +21,4 @@ public class UserService {
 		}
 	}
 }
+*/
