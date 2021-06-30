@@ -1,3 +1,4 @@
+/*
 package com.valdir.os.config;
 
 import java.util.Arrays;
@@ -27,17 +28,21 @@ import com.valdir.os.security.JWTUtil;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/*
+	*/
+/*
 	 * Add injection of this Env to read a active profiles and free access to the
 	 * h2-console om browser
-	 */
+	 *//*
+
 	@Autowired
 	private Environment environment;
 
-	/*
+	*/
+/*
 	 * Using our UserDetailsService on authentication to see the informations from
 	 * user and find a user by CPF
-	 */
+	 *//*
+
 	@Autowired
 	private UserDetailsService userDetailsService;
 
@@ -49,10 +54,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		/*
+		*/
+/*
 		 * This condition will verify if the active profile contais the test profile to
 		 * free access to h2-console om browser
-		 */
+		 *//*
+
 		if (Arrays.asList(this.environment.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
 		}
@@ -65,19 +72,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
-	/*
+	*/
+/*
 	 * This method will say to Spring Security who is my UserDateilsService and my
 	 * password encoder
-	 */
+	 *//*
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
 	}
 
-	/*
+	*/
+/*
 	 * By default the cors is bloqued on API when spring security is added and to
 	 * disable cors we need to make it explicit
-	 */
+	 *//*
+
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -85,12 +96,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return source;
 	}
 
-	/*
+	*/
+/*
 	 * My system will have available a @Bean to encript passwords that i will be
 	 * able to inject in others classes from system
-	 */
+	 *//*
+
 	@Bean
 	BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 }
+*/
