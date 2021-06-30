@@ -29,7 +29,7 @@ public class ClienteDTO implements Serializable {
 	private String telefone;
 
 	@JsonIgnore
-	@NotEmpty(message = "O campo SENHA é requerido")
+//	@NotEmpty(message = "O campo SENHA é requerido")
 	private String senha;
 
 	private Set<Integer> perfis = new HashSet<>();
